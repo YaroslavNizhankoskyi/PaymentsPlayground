@@ -13,7 +13,7 @@ namespace PaymentsPlayground.Services
         private readonly IPaymentProcessingService _paymentServcie;
         private readonly WalletConfiguration walletConfuguration;
 
-        public WalletService(AppDbContext dbContext, 
+        public WalletService(AppDbContext dbContext,
             ICurrentUserService currentUserService,
             IPaymentProcessingService paymentServcie,
             WalletConfiguration walletConfuguration)
@@ -78,7 +78,7 @@ namespace PaymentsPlayground.Services
                     .Contains(x.UserPaymentId))
                 .ToList();
 
-            foreach(var transaction in transactions)
+            foreach (var transaction in transactions)
             {
                 var payment = payments
                     .FirstOrDefault(x => x.Id == transaction.UserPaymentId);
@@ -91,17 +91,17 @@ namespace PaymentsPlayground.Services
 
                 listViewModels.Add(new PaymentViewModel
                 {
-                   Amount = payment.Amount,
-                   DateFinished = transaction.FinishTime,
-                   DateStarted = transaction.RegisterTime,
-                   ReceiverName = receiver.UserName,
-                   SenderName = sender.UserName,
-                   Status = transaction.Status,
-                   TransactionId = transaction.TransactionId
+                    Amount = payment.Amount,
+                    DateFinished = transaction.FinishTime,
+                    DateStarted = transaction.RegisterTime,
+                    ReceiverName = receiver.UserName,
+                    SenderName = sender.UserName,
+                    Status = transaction.Status,
+                    TransactionId = transaction.TransactionId
                 });
             }
 
-            return listViewModels;      
+            return listViewModels;
         }
 
         public List<string> RegisterSendMoney(PaymentDetails paymentDetails)

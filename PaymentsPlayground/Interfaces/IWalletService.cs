@@ -22,4 +22,3 @@ namespace PaymentsPlayground.Interfaces
         public List<PaymentViewModel> GetUserPayments(string email);
     }
 }
-    

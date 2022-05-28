@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using PaymentsPlayground.Data;
 using PaymentsPlayground.Helpers.Const;
 using PaymentsPlayground.Models;
@@ -22,7 +21,8 @@ namespace PaymentsPlayground.Helpers
                 await Seed.SeedRoles(roleManager);
                 await Seed.SeedAdmin(userManager, roleManager, context);
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
                 logger.LogError(ex, "An error occurred during migration");
             }

@@ -1,8 +1,5 @@
 ﻿using PaymentsPlayground.Interfaces;
 using PaymentsPlayground.Models.Payment;
-using PaymentsPlayground.Services;
-using System.Collections.Immutable;
-using System.Reflection;
 
 namespace PaymentsPlayground.Factories
 {
@@ -25,7 +22,7 @@ namespace PaymentsPlayground.Factories
                 var requiredBuilder = (IPartialBuilder)Activator.CreateInstance(type, paymentService);
 
                 _partialBuilders.Add(paymentType, requiredBuilder);
-                
+
             }
         }
 

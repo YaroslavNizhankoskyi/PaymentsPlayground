@@ -39,7 +39,7 @@ namespace PaymentsPlayground.Services
             };
 
             _dbContext.UserPayments.Add(userPayment);
-            if (_dbContext.SaveChanges() == 0) 
+            if (_dbContext.SaveChanges() == 0)
             {
                 errorList.Add("Could not add payment");
                 return errorList;

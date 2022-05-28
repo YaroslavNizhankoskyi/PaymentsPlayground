@@ -1,11 +1,8 @@
-﻿using Microsoft.Extensions.Options;
-using PaymentsPlayground.Helpers;
-using PaymentsPlayground.Helpers.Credentials;
+﻿using PaymentsPlayground.Helpers.Credentials;
 using PaymentsPlayground.Interfaces;
 using PaymentsPlayground.Models.Payment;
 using PaymentsPlayground.Models.Payment.Credentials;
 using PaymentsPlayground.Models.Payment.PaymentForms;
-using PayPal.Api;
 
 namespace PaymentsPlayground.Services
 {

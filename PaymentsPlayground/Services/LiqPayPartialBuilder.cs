@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using PaymentsPlayground.Interfaces;
 using PaymentsPlayground.Models.Payment;
 using PaymentsPlayground.Models.Payment.PaymentForms;
-using PaymentsPlayground.Models.ViewModels;
 
 namespace PaymentsPlayground.Services
 {

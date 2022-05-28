@@ -1,16 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Newtonsoft.Json;
 using PaymentsPlayground.Helpers;
 using PaymentsPlayground.Interfaces;
-using PaymentsPlayground.Models;
-using PaymentsPlayground.Models.Payment;
 using PaymentsPlayground.Models.ViewModels;
-using PaymentsPlayground.Services;
-using System.Text;
 using ModelError = PaymentsPlayground.Models.ViewModels.ModelError;
 
 namespace PaymentsPlayground.Pages
@@ -23,7 +16,7 @@ namespace PaymentsPlayground.Pages
         private readonly IPartialBuilderFactory _builderFactory;
         private readonly IWalletService _walletService;
         private readonly IUserValidatorService _userValidator;
-        
+
         public PaymentModel PaymentModel { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, IPartialBuilderFactory builderFactory,
@@ -64,7 +57,7 @@ namespace PaymentsPlayground.Pages
         {
             var errors = ModelState
                 .Where(x => x.Value.Errors.Count > 0)
-                .Select(x => 
+                .Select(x =>
                     new ModelError
                     {
                         PropertyName = x.Key,
@@ -72,7 +65,7 @@ namespace PaymentsPlayground.Pages
                     }
                 ).ToList();
 
-            if(_walletService.GetBalance() < model.Amount)
+            if (_walletService.GetBalance() < model.Amount)
             {
                 errors.Add(new ModelError
                 {
@@ -100,7 +93,7 @@ namespace PaymentsPlayground.Pages
                     });
                 }
             }
-            
+
             return errors;
         }
     }

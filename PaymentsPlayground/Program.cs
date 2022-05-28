@@ -1,8 +1,5 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using PaymentsPlayground.Data.Helpers;
 using PaymentsPlayground.Helpers;
-using PaymentsPlayground.Helpers.Const;
 
 var builder = WebApplication.CreateBuilder(args);
 

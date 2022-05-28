@@ -5,7 +5,7 @@ using PaymentsPlayground.Models.Auth;
 
 namespace PaymentsPlayground.Services
 {
-    public  class AuthService : IAuthService
+    public class AuthService : IAuthService
     {
         private const string UserNotFound = "User not found";
         private const string UserExists = "User already exists";

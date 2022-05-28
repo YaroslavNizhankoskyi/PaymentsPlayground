@@ -1,7 +1,5 @@
 ﻿using PaymentsPlayground.Interfaces;
 using PaymentsPlayground.Models.Payment;
-using PaymentsPlayground.Services;
-using System.Reflection;
 
 namespace PaymentsPlayground.Factories
 {

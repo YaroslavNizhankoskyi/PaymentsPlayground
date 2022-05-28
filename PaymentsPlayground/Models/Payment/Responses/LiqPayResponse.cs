@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace PaymentsPlayground.Models.Payment.Responses
+﻿namespace PaymentsPlayground.Models.Payment.Responses
 {
     public class LiqPayResponse
     {

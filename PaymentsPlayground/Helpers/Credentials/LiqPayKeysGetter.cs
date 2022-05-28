@@ -1,5 +1,4 @@
-﻿using PaymentsPlayground.Models;
-using PaymentsPlayground.Models.Payment.Credentials;
+﻿using PaymentsPlayground.Models.Payment.Credentials;
 
 namespace PaymentsPlayground.Helpers.Credentials
 {

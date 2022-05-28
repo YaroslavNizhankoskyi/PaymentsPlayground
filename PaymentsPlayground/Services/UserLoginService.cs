@@ -1,8 +1,6 @@
 ﻿using PaymentsPlayground.Data;
 using PaymentsPlayground.Helpers.Const;
 using PaymentsPlayground.Interfaces;
-using PaymentsPlayground.Models;
-using PaymentsPlayground.Models.Auth;
 using PaymentsPlayground.Models.ViewModels;
 
 namespace PaymentsPlayground.Services
@@ -29,7 +27,7 @@ namespace PaymentsPlayground.Services
             if (loginResult.Succeeded) return new List<string>();
 
             return await Register(model);
-        }  
+        }
 
 
         public async Task<List<string>> Register(UserLoginModel model)

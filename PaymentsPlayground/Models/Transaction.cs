@@ -17,7 +17,7 @@
         public UserPayment UserPayment { get; set; }
     }
 
-    public enum TransactionStatus 
+    public enum TransactionStatus
     {
         Registered,
         Failure,

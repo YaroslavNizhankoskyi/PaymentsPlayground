@@ -1,12 +1,9 @@
-﻿using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PaymentsPlayground.Helpers.Credentials;
 using PaymentsPlayground.Interfaces;
-using PaymentsPlayground.Models;
 using PaymentsPlayground.Models.Payment;
 using PaymentsPlayground.Models.Payment.Credentials;
 using PaymentsPlayground.Models.Payment.PaymentForms;
-using PaymentsPlayground.Models.ViewModels;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -41,8 +38,8 @@ namespace PaymentsPlayground.Services
                 order_id = paymentDetails.OrderId,
                 sandbox = 1,
 
-                result_url = "https://localhost:7053",
-                server_url = "https://b894-195-170-179-28.eu.ngrok.io/api/callbacks/liqpay",
+                result_url = _credentials.ReturnUrl,
+                server_url = _credentials.ServerUrl,
 
                 product_category = "Напої",
                 product_description = "Гаряче какао з альпійським молоком",

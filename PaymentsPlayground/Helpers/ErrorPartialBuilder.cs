@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using PaymentsPlayground.Models.Payment.PaymentForms;
 using PaymentsPlayground.Models.ViewModels;
 
 namespace PaymentsPlayground.Helpers

@@ -1,7 +1,4 @@
-﻿using PaymentsPlayground.Models;
-using PaymentsPlayground.Pages;
-
-namespace PaymentsPlayground.Interfaces
+﻿namespace PaymentsPlayground.Interfaces
 {
     public interface IUserValidatorService
     {

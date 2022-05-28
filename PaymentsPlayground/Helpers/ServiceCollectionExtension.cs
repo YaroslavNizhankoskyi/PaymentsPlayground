@@ -1,7 +1,6 @@
 ﻿using PaymentsPlayground.Factories;
 using PaymentsPlayground.Helpers.Credentials;
 using PaymentsPlayground.Interfaces;
-using PaymentsPlayground.Models;
 using PaymentsPlayground.Models.Payment;
 using PaymentsPlayground.Models.Payment.Credentials;
 using PaymentsPlayground.Services;

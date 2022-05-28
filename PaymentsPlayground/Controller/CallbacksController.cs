@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PaymentsPlayground.Interfaces;
@@ -21,7 +20,7 @@ namespace PaymentsPlayground.Controller
         }
 
         [HttpPost("liqpay")]
-        public IActionResult LiqPayWebHook([FromForm]LiqPayForm response)
+        public IActionResult LiqPayWebHook([FromForm] LiqPayForm response)
         {
             byte[] request_data = Convert.FromBase64String(response.Data);
             string decodedString = Encoding.UTF8.GetString(request_data);
@@ -29,7 +28,7 @@ namespace PaymentsPlayground.Controller
 
             var order_id = liqPayResponse.order_id;
 
-            if(liqPayResponse.status == "sandbox")
+            if (liqPayResponse.status == "sandbox")
             {
                 try
                 {
@@ -49,7 +48,7 @@ namespace PaymentsPlayground.Controller
         }
 
         [HttpPost("paypal")]
-        public async Task<IActionResult> PayPalWebHook([FromForm]PayPalResponse response)
+        public async Task<IActionResult> PayPalWebHook([FromForm] PayPalResponse response)
         {
             var order_id = response.custom;
 

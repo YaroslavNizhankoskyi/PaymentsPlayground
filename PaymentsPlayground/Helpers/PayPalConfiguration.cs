@@ -23,7 +23,7 @@ namespace PaymentsPlayground.Helpers
         }
 
         private static string GetAccessToken()
-        {             
+        {
             string accessToken = new OAuthTokenCredential
                 (ClientId, ClientSecret, GetConfig()).GetAccessToken();
             return accessToken;

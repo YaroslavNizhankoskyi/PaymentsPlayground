@@ -1,6 +1,4 @@
-﻿using PaymentsPlayground.Interfaces;
-
-namespace PaymentsPlayground.Models.Payment.PaymentForms
+﻿namespace PaymentsPlayground.Models.Payment.PaymentForms
 {
     public class PayPalPaymentForm
     {
