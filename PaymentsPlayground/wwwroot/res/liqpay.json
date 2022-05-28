@@ -1,4 +1,6 @@
 ﻿{
-  "publickey": "sandbox_i58784975351",
-  "privatekey": "sandbox_zEh3Xu5kv7w3pl8bIganYsvaVNLuUMPabr2IBs3h"
+  "publickey": "",
+  "privatekey": "",
+  "ReturnUrl": "https://localhost:7053",
+  "ServerUrl": "https://b894-195-170-179-28.eu.ngrok.io/api/callbacks/liqpay"
 }

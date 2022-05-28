@@ -7,5 +7,6 @@
         "0" - the GET method will be used. */
 
   "Rm": "2",
-  "Cmd": "_xclick"
+  "Cmd": "_xclick",
+  "ReturnUrl": "https://b894-195-170-179-28.eu.ngrok.io/api/callbacks/paypal"
 }

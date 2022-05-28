@@ -11,5 +11,7 @@
         public string NoShipping { get; set; }
 
         public string CurrencyCode { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 }

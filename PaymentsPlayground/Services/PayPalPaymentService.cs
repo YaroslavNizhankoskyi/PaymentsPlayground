@@ -34,7 +34,7 @@ namespace PaymentsPlayground.Services
                 No_shipping = _credentials.NoShipping,
                 Cancel_url = "",
                 Notify_url = "",
-                Return_url = "https://b894-195-170-179-28.eu.ngrok.io/api/callbacks/paypal",
+                Return_url = _credentials.ReturnUrl,
                 Item_name = "Transaction"
             };
         }
