@@ -1,0 +1,41 @@
+﻿@page
+@inject SignInManager<User> signInManager
+@model PaymentsPlayground.Pages.GetUserPaymentsModel
+@{
+}
+
+@if(Model.isAdmin)
+{
+    <form method="post" class="getPayments">
+		<div class="border p-3 mt-4">
+			<div class="row pb-2">
+				<h2 class="text-primary pl-3">Get payments</h2>
+				<hr />
+			</div>
+			<div asp-validation-summary="All"></div>
+			<div class="mb-3">
+				<label asp-for="Email"></label>
+				<input name="userEmail" class="form-control" type="email"  />
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+
+			<button type="button" data-toggle="payments-modal"
+				class="btn btn-primary" data-url="@Url.Page("GetUserPayments", "UserPayments")" style="width:150px;">
+				Find
+			</button>       
+		</div>	
+	</form>
+}
+else
+{
+	@if (Model.Payments.Any())
+	{
+		@await Html.PartialAsync("_PaymentsPartial", Model.Payments)
+	}
+
+}
+
+<div id="payments-placeholder"></div>
+
+
+

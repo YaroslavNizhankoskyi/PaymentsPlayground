@@ -1,0 +1,11 @@
+﻿{
+  "BusinessEmail": "mymail@mail.com",
+  "CurrencyCode": "USD",
+  "NoShipping": "1",
+  /*    "1" - no parameters will be passed.
+        "2" - the POST method will be used.
+        "0" - the GET method will be used. */
+
+  "Rm": "2",
+  "Cmd": "_xclick"
+}

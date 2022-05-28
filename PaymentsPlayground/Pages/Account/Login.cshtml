@@ -1,0 +1,29 @@
+﻿@page
+@inject SignInManager<User> signInManager
+@model PaymentsPlayground.Pages.Account.LoginModel
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary pl-3">Sign In</h2>
+            <hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="UserLoginModel.UserEmail"></label>
+			<input asp-for="UserLoginModel.UserEmail" class="form-control" type="email"/>
+			<span asp-validation-for="UserLoginModel.UserEmail" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="UserLoginModel.Password"></label>
+			<input asp-for="UserLoginModel.Password" class="form-control" type="password" />
+			<span asp-validation-for="UserLoginModel.Password" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px;">Create</button>       
+	</div>
+	
+</form>
+
+@if(signInManager.IsSignedIn(User)){
+	<p>@User.Identity.Name</p>
+}

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using PaymentsPlayground.Interfaces
+@inject SignInManager<User> signInManager
+@inject IWalletService walletService
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,13 +29,40 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        @if (!signInManager.IsSignedIn(User))
+                        {
+                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Account/Login">Login</a>
+                            </li>
+                        }
                     </ul>
+                    @if(signInManager.IsSignedIn(User))
+                    { 
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item mr-2">
+                                <h5>Balance:</h5>
+                                <h4 >@walletService.GetBalance()</h4>
+                            </li>
+                             <li class="nav-item mr-2">
+                                <h5 class="nav-link text-dark" asp-area="">@User.Identity.Name</h5>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <form method="get">
+                                    <button type="submit" asp-page="/Account/Logout">Log out</button>
+                                </form>
+                            </li>
+                        </ul>        
+                    }
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @if (TempData["success"] != null)
+            {
+                <div class="alert alert-success">@TempData["message"]</div>
+            }
             @RenderBody()
         </main>
     </div>

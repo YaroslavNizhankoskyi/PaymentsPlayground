@@ -1,0 +1,20 @@
+﻿@using PaymentsPlayground.Models.ViewModels
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<PaymentViewModel>
+
+
+<table class="table table-striped">
+@foreach(var payment in Model)
+{
+    <tr>
+        <td>$@payment.Amount</td>
+        <td>@payment.ReceiverName</td>
+        <td>@payment.SenderName</td>
+        <td>@payment.Status.ToString()</td>
+    </tr>
+}
+</table>
